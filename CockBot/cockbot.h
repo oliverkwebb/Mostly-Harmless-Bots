@@ -11,6 +11,7 @@
 
 extern ficlSystem *forth_system;
 extern time_t uptime;
+extern long long polloemotes[31];
 
 // *********************
 // Values
@@ -34,16 +35,6 @@ extern time_t uptime;
 #define WATCHCAT_TIME                                                          \
   10 // If a given command takes longer than the said time in seconds it will
      // be automatically killed!
-
-#define NOACCESS_ICON                                                          \
-  "https://cdn.discordapp.com/emojis/1035646207692910612.webp" // Angry Chicken
-                                                               // Emote Picture
-#define SUCCESS_ICON                                                           \
-  "https://cdn.discordapp.com/emojis/970384190547845170.gif" // Squished Chicken
-                                                             // Emote Gif
-#define ERROR_ICON                                                             \
-  "https://cdn.discordapp.com/emojis/1035654365391900744.webp" // Sad Chicken
-                                                               // Emote Picture
 
 #define LINE_BUFFERSIZE 512 // Pretty big but I have a habbit of one liners.
 #define ADMIN_SCRIPT "fth-scripts/admin.fth"

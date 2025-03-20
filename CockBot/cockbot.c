@@ -81,7 +81,7 @@ void accessErrorEmbed(struct discord *bot_client,
        .footer =
            &(struct discord_embed_footer){
                .text = "TESTING TESTING",
-               .icon_url = NOACCESS_ICON,
+               .icon_url = randPolloUrl(),
            },
        .fields = &(struct discord_embed_fields){
            .size = 2,
@@ -143,7 +143,7 @@ void helpEmbed(struct discord *bot_client,
        .footer =
            &(struct discord_embed_footer){
                .text = "TESTING TESTING",
-               .icon_url = NOACCESS_ICON,
+               .icon_url = randPolloUrl(),
            },
        .fields = &(struct discord_embed_fields){
            .size = 4,
@@ -235,7 +235,7 @@ void cmdEmbed(struct discord *bot_client, const struct discord_message *dis_msg,
             .footer =
                 &(struct discord_embed_footer){
                     .text = "TESTING TESTING",
-                    .icon_url = ERROR_ICON,
+                    .icon_url = randPolloUrl(),
                 },
         },
     };
@@ -267,7 +267,7 @@ void cmdEmbed(struct discord *bot_client, const struct discord_message *dis_msg,
             .footer =
                 &(struct discord_embed_footer){
                     .text = "TESTING TESTING",
-                    .icon_url = SUCCESS_ICON,
+                    .icon_url = randPolloUrl(),
                 },
         },
     };
@@ -505,7 +505,7 @@ void regEmbed(struct discord *bot_client, const struct discord_message *dis_msg,
        .footer =
            &(struct discord_embed_footer){
                .text = "TESTING TESTING",
-               .icon_url = SUCCESS_ICON,
+               .icon_url = randPolloUrl(),
            },
        .fields = &(struct discord_embed_fields){
            .size = 1,
@@ -549,7 +549,7 @@ void timeoutEmbed(struct discord *bot_client,
        .footer =
            &(struct discord_embed_footer){
                .text = "TESTING TESTING",
-               .icon_url = NOACCESS_ICON,
+               .icon_url = randPolloUrl(),
            },
        .fields = &(struct discord_embed_fields){
            .size = 2,
@@ -767,7 +767,7 @@ void disOnMessage(struct discord *bot_client,
 }
 
 time_t uptime;
-unsigned long long polloemotes[] = {
+long long polloemotes[31] = {
     982486221261508608,  1167501376696352859, 993305708135186462,
     1035645103156494396, 996806132981055569,  1171908512562020382,
     1064441109297774632, 1168525351350181950, 1171908670829895711,

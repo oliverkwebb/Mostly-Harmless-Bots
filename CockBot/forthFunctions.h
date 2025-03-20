@@ -24,4 +24,6 @@ void disBan(ficlVm *forth_vm);
 
 void disDelBan(ficlVm *forth_vm);
 
+char *randPolloUrl();
+
 #endif

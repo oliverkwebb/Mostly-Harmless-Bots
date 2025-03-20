@@ -12,6 +12,8 @@
 #include "ficl/ficl.h"
 #include "forthFunctions.h"
 
+#define ARRAY_LEN(array) (sizeof(array) / sizeof(*array))
+
 static struct discord *get_client_from_forth(ficlVm *forth_vm) {
   ficlDictionary *forth_dict = ficlVmGetDictionary(forth_vm);
   ficlString tempString1;
@@ -38,6 +40,19 @@ void disPin(ficlVm *forth_vm) {
   // all discord centric code and the like can be done now grabbing from stack
   discord_pin_message(bot_client, dis_msg->channel_id,
                       ficlStackPopInteger(forth_vm->dataStack), NULL, NULL);
+}
+
+unsigned long long randpollo() {
+  return polloemotes[(rand() % ARRAY_LEN(polloemotes))];
+}
+
+char rpollourlbuffer[256];
+
+char *randPolloUrl() {
+  snprintf(rpollourlbuffer, 256, "https://cdn.discordapp.com/emojis/%llu",
+           randpollo());
+  log_debug("Random Pollo: %s", rpollourlbuffer);
+  return rpollourlbuffer;
 }
 
 // This code was largely copied from extras.c
