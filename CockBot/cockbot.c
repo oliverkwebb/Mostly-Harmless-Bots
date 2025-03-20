@@ -308,7 +308,7 @@ void toolongEmbed(struct discord *bot_client,
                           false);
   discord_embed_add_field(
       &dis_embeds[1], "Error Output:", "[More than 1024 characters]", false);
-  discord_embed_set_footer(&dis_embeds[2], "TESTING TESTING", ERROR_ICON, "");
+  discord_embed_set_footer(&dis_embeds[2], "TESTING TESTING", randPolloUrl(), "");
   discord_create_message(
       bot_client, dis_msg->channel_id,
       &(struct discord_create_message){
@@ -466,7 +466,7 @@ void errEmbed(struct discord *bot_client, const struct discord_message *dis_msg,
   }
   discord_embed_add_field(&dis_embeds[1], "Error Output:", forth_outFormatted,
                           false);
-  discord_embed_set_footer(&dis_embeds[2], "TESTING TESTING", ERROR_ICON, "");
+  discord_embed_set_footer(&dis_embeds[2], "TESTING TESTING", randPolloUrl(), "");
   discord_create_message(
       bot_client, dis_msg->channel_id,
       &(struct discord_create_message){
